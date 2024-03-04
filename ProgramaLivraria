@@ -1,0 +1,21 @@
+package negocio;
+
+public class Autor {
+      // prpriedades da classe
+	private String nome = "";
+	
+	// metodos constrtutores dad classe
+	public Autor() {
+		
+	}
+	public Autor(String nome) {
+		this.nome = nome;
+	}
+	//metodos get/set da classe
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome){
+		this.nome = nome;
+	}
+}

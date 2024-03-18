@@ -1,0 +1,53 @@
+package apresentacao;
+
+import java.util.Scanner;
+
+import negocio.Aluno;
+import negocio.Cadeira;
+import negocio.Professor;
+import negocio.Turma;
+
+public class Principal {
+	public static void main(String[]args) {
+		//decxlaração de variaveis
+		Scanner leitor = new Scanner(System.in);
+		
+		Professor objProfessor = new Professor();
+		Aluno objAluno = new Aluno();
+		Turma objTurma = new Turma();
+		
+		//entrada de dados
+		System.out.print("Digite o nome da cadeira: ");
+		objTurma.setObjCadeira(new Cadeira(leitor.next()));
+		
+		System.out.print("Digite o nome do professor: ");
+		objProfessor.setNome(leitor.next());
+		
+		System.out.print("Digite o Titulo: ");
+		objProfessor.setTitulo((leitor.next()));
+		
+		System.out.print("Digite o salario: ");
+		objProfessor.setSalario((leitor.nextInt()));
+		
+		objTurma.setObjProfessor(objProfessor);
+		
+		do {
+			objAluno = new Aluno();
+			System.out.print("Digite a matricula do aluno: ");
+			objAluno.setMatricula(leitor.nextInt());
+			
+			objTurma.adicionarAlunos(objAluno);
+			
+			System.out.print("Digite <S> para mais alunos ou <N> para sair: ");
+			} while (leitor.next().equalsIgnoreCase("S"));
+		
+		leitor.close();
+		//saida de dados
+		
+		System.out.println("Cadeira" + objTurma.getObjCadeira().getNome());
+		System.out.println("Professor" + objTurma.getObjProfessor().getNome() + "" + objTurma.getObjProfessor().getNome());
+		objTurma.ListarAlunos();
+		
+	}
+
+}

@@ -1,0 +1,20 @@
+Adicionar e listar
+
+private int quantidadeDeAlunos = 0;
+
+public void adicionarAlunos(Aluno objAluno) {
+	if(quantidadeDeAlunos < 40) {
+		colecao[quantidadeDeAlunos] = objAluno;
+		quantidadeDeAlunos++;
+	} else { 
+		System.out.println("A turma está lotada");
+		}
+	}
+public void ListarAlunos() {
+	System.out.println("Matricula /t nome");
+	for (int i = 0 ; i < quantidadeDeAlunos ; i++) {
+		System.out.println (colecao[i].getMatricula() + "/t" + colecao[i].getNome());
+	}
+}
+
+}
